@@ -23,7 +23,7 @@ export const GET_CATEGORIES = gql`
 export const GET_CATEGORY_DATA = (CategoryName: string) => {
   return gql`
     query {
-      category(input: { title:${CategoryName} }) {
+      category(input: { title: "${CategoryName}" }) {
         products {
           name
           inStock
@@ -39,5 +39,38 @@ export const GET_CATEGORY_DATA = (CategoryName: string) => {
         }
       }
     }
+  `;
+};
+export const GET_PRODUCT_DATA = (ProductID: string) => {
+  return gql`   
+query{
+  product(id:"${ProductID}"){
+    id
+    name
+    gallery
+    inStock
+    description
+    category
+    attributes{
+      name
+      id
+      items{
+        displayValue
+        value
+        id
+      }
+    }
+    prices{
+      currency{
+        label
+        symbol
+      }
+      amount
+    }
+    brand
+
+  }
+ 
+}
   `;
 };

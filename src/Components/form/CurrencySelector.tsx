@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { currencyA } from '../../Atoms/HeaderAtoms';
+import { currencyA, currencyIDA } from '../../Atoms/Atoms';
 
 import { Select, MenuItem } from '@mui/material';
 import { SetterOrUpdater, useRecoilValue, useSetRecoilState } from 'recoil';
@@ -23,12 +23,13 @@ const CurrencySelector = (props: CurrencySelectorType) => {
   const setSelectedCurrency: SetterOrUpdater<Currency> =
     useSetRecoilState(currencyA);
 
+  const setSelectedCurrencyID: SetterOrUpdater<number> =
+    useSetRecoilState(currencyIDA);
+
   const { control } = useForm({
     mode: 'onChange',
   });
-  useEffect(() => {
-    console.log(SelectedCurrency);
-  }, [SelectedCurrency]);
+
   return (
     <Controller
       control={control}
@@ -47,9 +48,15 @@ const CurrencySelector = (props: CurrencySelectorType) => {
             }}
             value={value}
           >
-            {props.data?.currencies.map((curency: Currency) => {
+            {props.data?.currencies.map((curency: Currency, id: number) => {
               return (
-                <MenuItem key={curency.label} value={curency.symbol}>
+                <MenuItem
+                  key={curency.label}
+                  value={curency.symbol}
+                  onClick={() => {
+                    setSelectedCurrencyID(id);
+                  }}
+                >
                   {curency.symbol}
                 </MenuItem>
               );

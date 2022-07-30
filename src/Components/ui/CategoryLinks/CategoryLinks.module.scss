@@ -1,0 +1,25 @@
+.Link {
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 20px;
+
+  color: #1d1f22;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+}
+.Selected {
+  text-transform: uppercase;
+  margin: 20px;
+  text-underline-offset: 20px;
+  text-decoration-thickness: 3px;
+
+  color: #5aee87;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 120%;
+}
