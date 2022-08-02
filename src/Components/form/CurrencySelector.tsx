@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { currencyA, currencyIDA } from '../../Atoms/Atoms';
 
 import { Select, MenuItem } from '@mui/material';
 import { SetterOrUpdater, useRecoilValue, useSetRecoilState } from 'recoil';
 import { useForm, Controller } from 'react-hook-form';
 import { getFullCurencyObj } from './../../helpers/getFullCurencyObj';
+import { CurrencyInput } from '../ui/Input/CurrencyInput';
 
 export type Currency = {
   __typename: string;
@@ -37,31 +38,35 @@ const CurrencySelector = (props: CurrencySelectorType) => {
       defaultValue={SelectedCurrency.symbol}
       render={({ field: { onChange, value } }) => {
         return (
-          <Select
-            onChange={(e) => {
-              const fullCurrencyObj: Currency = getFullCurencyObj(
-                e.target.value,
-                props.data.currencies
-              );
-              setSelectedCurrency(fullCurrencyObj);
-              onChange(e.target.value);
-            }}
-            value={value}
-          >
-            {props.data?.currencies.map((curency: Currency, id: number) => {
-              return (
-                <MenuItem
-                  key={curency.label}
-                  value={curency.symbol}
-                  onClick={() => {
-                    setSelectedCurrencyID(id);
-                  }}
-                >
-                  {curency.symbol}
-                </MenuItem>
-              );
-            })}
-          </Select>
+          <>
+            <Select
+              onChange={(e) => {
+                const fullCurrencyObj: Currency = getFullCurencyObj(
+                  e.target.value,
+                  props.data.currencies
+                );
+                setSelectedCurrency(fullCurrencyObj);
+                onChange(e.target.value);
+              }}
+              input={<CurrencyInput />}
+              sx={{ border: 0 }}
+              value={value}
+            >
+              {props.data?.currencies.map((curency: Currency, id: number) => {
+                return (
+                  <MenuItem
+                    key={curency.label}
+                    value={curency.symbol}
+                    onClick={() => {
+                      setSelectedCurrencyID(id);
+                    }}
+                  >
+                    {curency.symbol}
+                  </MenuItem>
+                );
+              })}
+            </Select>
+          </>
         );
       }}
     ></Controller>

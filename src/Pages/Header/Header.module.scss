@@ -1,4 +1,12 @@
 .Header {
   color: #000;
   margin: 20px;
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+  .CartAndCurrency {
+    display: flex;
+    justify-content: end;
+  }
 }

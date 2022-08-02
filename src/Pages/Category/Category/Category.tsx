@@ -5,17 +5,30 @@ import { useQuery } from '@apollo/client';
 import WithUseQueryData from '../../../HOCs/WithUseQueryData';
 
 import { Currency } from '../../../Components/form/CurrencySelector';
-import GetCurrencyId from '../../../helpers/GetCurrencyId';
 import { GET_CATEGORY_DATA } from '../../../Requests/graphQlRequests';
 
 import { useRecoilValue } from 'recoil';
 
 import { currencyIDA } from '../../../Atoms/Atoms';
 import Product from '../../../Components/ui/Product/Product';
+import { Grid } from '@mui/material';
 
 type CategoryPropsType = {
   category: string | null;
 };
+
+export type attributeItemType = {
+  displayValue: string;
+  value: string;
+  id: string;
+};
+
+export type atributesType = {
+  name: string;
+  id: string;
+  items: attributeItemType[];
+};
+
 export type ProductType = {
   id: string;
   name: string;
@@ -26,6 +39,7 @@ export type ProductType = {
 
   prices: { amount: number; currency: Currency }[];
   brand: string;
+  attributes: atributesType[];
 };
 
 const Category = ({ category }: CategoryPropsType) => {
@@ -36,11 +50,15 @@ const Category = ({ category }: CategoryPropsType) => {
 
   return (
     <WithUseQueryData response={{ loading, error, data }}>
-      {data?.category.products.map((product: ProductType) => {
-        return (
-          <Product key={product.id} product={product} CurrencyId={CurrencyId} />
-        );
-      })}
+      <Grid container spacing={2}>
+        {data?.category.products.map((product: ProductType) => {
+          return (
+            <Grid item xs={12} sm={6} md={4} key={product.id}>
+              <Product product={product} CurrencyId={CurrencyId} />
+            </Grid>
+          );
+        })}
+      </Grid>
     </WithUseQueryData>
   );
 };

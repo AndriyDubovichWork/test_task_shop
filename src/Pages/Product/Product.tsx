@@ -14,7 +14,6 @@ const Product = () => {
   const CurrencyId = useRecoilValue(currencyIDA);
   const Cart = useRecoilValue(CartA);
   const setCart = useSetRecoilState(CartA);
-  console.log(Cart);
   return (
     <WithUseQueryData response={{ loading, error, data }}>
       <h2>{data?.product.name}</h2>{' '}

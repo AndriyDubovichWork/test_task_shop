@@ -5,6 +5,7 @@ import App from './App';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
+import { StylesProvider } from '@material-ui/core/styles';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,11 +18,13 @@ const client = new ApolloClient({
 
 root.render(
   <ApolloProvider client={client}>
-    <RecoilRoot>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </RecoilRoot>
+    <StylesProvider injectFirst={false}>
+      <RecoilRoot>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </RecoilRoot>
+    </StylesProvider>
   </ApolloProvider>
 );
 

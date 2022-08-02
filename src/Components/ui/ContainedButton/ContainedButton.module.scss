@@ -1,0 +1,21 @@
+.Button {
+  // margin-left: 20px;
+
+  border-radius: 0 !important;
+  border-color: #5aee87 !important;
+  background-color: #5aee87 !important;
+  a {
+    color: #fff;
+
+    text-decoration: none;
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 120%;
+  }
+}
+.Button:hover {
+  border-color: #000 !important;
+  background-color: #000 !important;
+}

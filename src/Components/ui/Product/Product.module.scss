@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+.Box:hover {
+  -webkit-box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.19);
+  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.19);
+}
+
+.Link {
+  color: #1d1f22;
+  text-decoration: none;
+
+  display: inline-block;
+
+  padding: 8px;
+  img {
+    width: 354px;
+    height: 330px;
+    object-fit: cover;
+  }
+
+  .Name {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 160%;
+  }
+  .Currency {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+  }
+}

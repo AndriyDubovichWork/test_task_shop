@@ -3,7 +3,8 @@ import { CartA } from '../../Atoms/Atoms';
 
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { ProductType } from '../Category/Category/Category';
-import { decrease, increase } from './../../helpers/ChangeCartObjQantity';
+import style from './Cart.module.scss';
+import CartItem from '../../Components/ui/CartItem/CartItem';
 
 export type CartObjType = ProductType & { quantity: number };
 
@@ -13,27 +14,9 @@ const Cart = () => {
 
   return (
     <div>
+      <h1 className={style.CartText}>CART</h1>
       {CartArray.map((CartObj: CartObjType) => {
-        return (
-          <div key={CartObj.name}>
-            {CartObj.name} quantity:{CartObj.quantity}
-            <img src={CartObj.gallery[0]} alt={CartObj.name} />
-            <button
-              onClick={() => {
-                increase(CartObj, CartArray, setCart);
-              }}
-            >
-              +
-            </button>
-            <button
-              onClick={() => {
-                decrease(CartObj, CartArray, setCart);
-              }}
-            >
-              -
-            </button>
-          </div>
-        );
+        return <CartItem CartObj={CartObj} key={CartObj.id} />;
       })}
       {CartArray.length === 0 ? 'Cart Empty' : ''}
 

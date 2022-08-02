@@ -2,13 +2,13 @@ import { useQuery } from '@apollo/client';
 import WithUseQueryData from '../../HOCs/WithUseQueryData';
 import { GET_HEADER_DATA } from '../../Requests/graphQlRequests';
 import logo from './../../assets/imgs/logo.svg';
-import EmpetyCart from './../../assets/imgs/Empty-Cart.svg';
 import style from './Header.module.scss';
 
-import CurrencySelector from './../../Components/form/CurrencySelector';
-import CategoryLinks from '../../Components/ui/CategoryLinks/CategoryLinks';
-import { NavLink } from 'react-router-dom';
 import { Grid } from '@mui/material';
+import { NavLink } from 'react-router-dom';
+import CartIcon from '../../Components/ui/CartIcon/CartIcon';
+import CategoryLinks from '../../Components/ui/CategoryLinks/CategoryLinks';
+import CurrencySelector from './../../Components/form/CurrencySelector';
 
 const Header = (props: any) => {
   const { loading, error, data } = useQuery(GET_HEADER_DATA);
@@ -21,15 +21,13 @@ const Header = (props: any) => {
             <CategoryLinks data={data} />
           </Grid>
           <Grid item xs={4}>
-            <NavLink to='/'>
+            <NavLink to='/?category=all' className={style.logo}>
               <img src={logo} alt='logo' />
             </NavLink>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={4} className={style.CartAndCurrency}>
             <CurrencySelector data={data} />
-            <NavLink to='/cart'>
-              <img src={EmpetyCart} alt='empety cart' />
-            </NavLink>
+            <CartIcon />
           </Grid>
         </Grid>
       </WithUseQueryData>

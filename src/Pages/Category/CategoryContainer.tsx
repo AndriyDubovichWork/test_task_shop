@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
-// import style from './Category.module.scss';
+import React from 'react';
+import style from './Category.module.scss';
 import { useSearchParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_CATEGORIES } from '../../Requests/graphQlRequests';
 // @ts-ignore
 import WithUseQueryData from '../../HOCs/WithUseQueryData';
-import { GET_CATEGORY_DATA } from '../../Requests/graphQlRequests';
 import Category from './Category/Category';
 
 const CategoryContainer = () => {
@@ -26,7 +25,7 @@ const CategoryContainer = () => {
 
   return (
     <WithUseQueryData response={{ loading, error, data }}>
-      <p>{category}</p>
+      <h2 className={style.CategoryName}>{category}</h2>
       <Category category={category} />
     </WithUseQueryData>
   );

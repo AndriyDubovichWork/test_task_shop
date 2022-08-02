@@ -1,0 +1,23 @@
+.Box {
+  position: relative;
+  display: inline-block;
+  .OutOfStock {
+    font-family: 'Raleway';
+    font-style: normal;
+
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 160%;
+
+    text-transform: uppercase;
+
+    position: absolute;
+    z-index: 999;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 40%;
+    text-align: center;
+    width: 60%;
+  }
+}
