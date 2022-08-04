@@ -6,9 +6,9 @@ import style from './Header.module.scss';
 
 import { Grid } from '@mui/material';
 import { NavLink } from 'react-router-dom';
-import CartIcon from '../../Components/ui/CartIcon/CartIcon';
 import CategoryLinks from '../../Components/ui/CategoryLinks/CategoryLinks';
 import CurrencySelector from './../../Components/form/CurrencySelector';
+import CartPopUp from './../../Components/ui/CartPopUp/CartPopUp';
 
 const Header = (props: any) => {
   const { loading, error, data } = useQuery(GET_HEADER_DATA);
@@ -27,7 +27,7 @@ const Header = (props: any) => {
           </Grid>
           <Grid item xs={4} className={style.CartAndCurrency}>
             <CurrencySelector data={data} />
-            <CartIcon />
+            <CartPopUp />
           </Grid>
         </Grid>
       </WithUseQueryData>

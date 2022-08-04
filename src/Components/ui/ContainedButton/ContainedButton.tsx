@@ -6,11 +6,18 @@ type ContainedButtonProps = {
   children: JSX.Element | string;
   onClick?: any;
   sx?: any;
+  disabled?: boolean;
 };
 
-const ContainedButton = ({ children, onClick, sx }: ContainedButtonProps) => {
+const ContainedButton = ({
+  children,
+  onClick,
+  sx,
+  disabled,
+}: ContainedButtonProps) => {
   return (
     <Button
+      disabled={disabled}
       sx={sx}
       variant='contained'
       onClick={onClick}

@@ -1,0 +1,26 @@
+.CartIconWrapper {
+  position: relative;
+
+  .EmptyCart {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .Quantity {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    color: #fff;
+    background-color: #000;
+    border-radius: 100%;
+    font-size: 16px;
+    padding: 5px;
+  }
+}
+
+.Menu {
+  height: 100%;
+  padding: 20px;
+}

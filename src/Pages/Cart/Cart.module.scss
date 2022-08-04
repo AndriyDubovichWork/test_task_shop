@@ -5,3 +5,28 @@
   font-size: 32px;
   line-height: 40px;
 }
+.TotalInfoWrap {
+  display: flex;
+  flex-direction: row;
+  .TotalInfoDescribe {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .TotalDescribe {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .TotalInfoNumber {
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+  }
+}

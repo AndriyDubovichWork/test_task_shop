@@ -23,14 +23,14 @@ export const decrease = (
 ) => {
   const ArrayCopy = JSON.parse(JSON.stringify(CartArray));
   let ObjectIdToRemove = null;
-  ArrayCopy.forEach((InnerCartObj: CartObjType, id: number) => {
+  ArrayCopy.map((InnerCartObj: CartObjType, id: number) => {
     if (InnerCartObj.id === CartObj.id) {
       if (InnerCartObj.quantity > 1) {
         InnerCartObj.quantity -= 1;
-        return CartObj;
       } else {
         ObjectIdToRemove = id;
       }
+      return InnerCartObj;
     } else {
       return InnerCartObj;
     }

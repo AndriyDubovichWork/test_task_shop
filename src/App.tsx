@@ -5,6 +5,8 @@ import Header from './Pages/Header/Header';
 import './App.css';
 import Product from './Pages/Product/Product';
 import Cart from './Pages/Cart/Cart';
+import Payment from './Pages/Payment/Payment';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
         <Route path='/' element={<CategoryContainer />} />
         <Route path='/products' element={<Product />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/payment' element={<Payment />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </div>
   );
