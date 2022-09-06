@@ -46,7 +46,10 @@ const Cart = () => {
               {Math.round(TotalCartInfo.sum)}
             </h2>
           </div>
-          <NavLink to='/payment' style={{ textDecoration: 'none' }}>
+          <NavLink
+            to='/test_task_shop/payment'
+            style={{ textDecoration: 'none' }}
+          >
             <ContainedButton>ORDER</ContainedButton>
           </NavLink>
         </>

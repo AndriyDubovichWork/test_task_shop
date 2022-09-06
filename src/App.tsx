@@ -13,10 +13,10 @@ function App() {
     <div style={{ width: '90%', margin: '0 auto' }}>
       <Header />
       <Routes>
-        <Route path='/' element={<CategoryContainer />} />
-        <Route path='/products' element={<Product />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/payment' element={<Payment />} />
+        <Route path='/test_task_shop' element={<CategoryContainer />} />
+        <Route path='/test_task_shop/products' element={<Product />} />
+        <Route path='/test_task_shop/cart' element={<Cart />} />
+        <Route path='/test_task_shop/payment' element={<Payment />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </div>

@@ -26,7 +26,7 @@ const CategoryLinks = (props: CategoryLinksType) => {
                 : style.Link;
             }}
             key={category.name}
-            to={'/?category=' + category.name}
+            to={'/test_task_shop/?category=' + category.name}
           >
             {category.name}
           </NavLink>

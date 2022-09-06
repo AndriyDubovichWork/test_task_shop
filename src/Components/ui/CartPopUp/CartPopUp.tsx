@@ -55,7 +55,7 @@ const CartPopUp = () => {
               })}
           </>
           <NavLink
-            to='/cart'
+            to='/test_task_shop/cart'
             onClick={popupState.close}
             style={{ textDecoration: 'none', marginRight: '20px' }}
           >
@@ -63,7 +63,7 @@ const CartPopUp = () => {
           </NavLink>
           <NavLink
             onClick={popupState.close}
-            to='/payment'
+            to='/test_task_shop/payment'
             style={{ textDecoration: 'none' }}
           >
             <ContainedButton>ORDER</ContainedButton>

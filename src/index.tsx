@@ -12,7 +12,7 @@ const root = ReactDOM.createRoot(
 );
 
 const client = new ApolloClient({
-  uri: 'http://localhost:4000/',
+  uri: 'https://graphql-shop-api.herokuapp.com/',
   cache: new InMemoryCache(),
 });
 

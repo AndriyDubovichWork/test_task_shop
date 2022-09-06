@@ -21,7 +21,7 @@ const Header = (props: any) => {
             <CategoryLinks data={data} />
           </Grid>
           <Grid item xs={4}>
-            <NavLink to='/?category=all' className={style.logo}>
+            <NavLink to='/test_task_shop/?category=all' className={style.logo}>
               <img src={logo} alt='logo' />
             </NavLink>
           </Grid>
