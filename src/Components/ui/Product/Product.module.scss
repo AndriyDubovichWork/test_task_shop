@@ -1,33 +1,33 @@
 .Box:hover {
-  -webkit-box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.19);
-  box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.19);
+	-webkit-box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.19);
+	box-shadow: 0px 4px 35px rgba(0, 0, 0, 0.19);
 }
 
 .Link {
-  color: #1d1f22;
-  text-decoration: none;
+	color: #1d1f22;
+	text-decoration: none;
 
-  display: inline-block;
+	display: inline-block;
 
-  padding: 8px;
-  img {
-    width: 354px;
-    height: 330px;
-    object-fit: cover;
-  }
+	padding: 8px;
+	img {
+		width: 600px;
+		height: 330px;
+		object-fit: contain;
+	}
 
-  .Name {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 160%;
-  }
-  .Currency {
-    font-family: 'Raleway';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 160%;
-  }
+	.Name {
+		font-family: 'Raleway';
+		font-style: normal;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 160%;
+	}
+	.Currency {
+		font-family: 'Raleway';
+		font-style: normal;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 160%;
+	}
 }
