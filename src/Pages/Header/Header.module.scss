@@ -1,6 +1,10 @@
 .Header {
   color: #000;
   margin: 20px;
+
+  display: flex;
+  justify-content: space-between;
+
   .logo {
     display: flex;
     justify-content: center;

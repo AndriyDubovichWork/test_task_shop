@@ -16,7 +16,7 @@ const CategoryLinks = (props: CategoryLinksType) => {
   let [searchParams] = useSearchParams();
   let categoryParam = searchParams.get('category');
   return (
-    <>
+    <div>
       {props.data?.categories.map((category: CategoryType) => {
         return (
           <NavLink
@@ -32,7 +32,7 @@ const CategoryLinks = (props: CategoryLinksType) => {
           </NavLink>
         );
       })}
-    </>
+    </div>
   );
 };
 

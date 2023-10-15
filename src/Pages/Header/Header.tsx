@@ -16,20 +16,14 @@ const Header = (props: any) => {
   return (
     <div className={style.Header}>
       <WithUseQueryData response={{ loading, error, data }}>
-        <Grid container spacing={2}>
-          <Grid item xs={4}>
-            <CategoryLinks data={data} />
-          </Grid>
-          <Grid item xs={4}>
-            <NavLink to='/test_task_shop/?category=all' className={style.logo}>
-              <img src={logo} alt='logo' />
-            </NavLink>
-          </Grid>
-          <Grid item xs={4} className={style.CartAndCurrency}>
-            <CurrencySelector data={data} />
-            <CartPopUp />
-          </Grid>
-        </Grid>
+        <CategoryLinks data={data} />
+        <NavLink to='/test_task_shop/?category=all' className={style.logo}>
+          <img src={logo} alt='logo' />
+        </NavLink>
+        <div className={style.CartAndCurrency}>
+          <CurrencySelector data={data} />
+          <CartPopUp />
+        </div>
       </WithUseQueryData>
     </div>
   );

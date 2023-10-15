@@ -17,7 +17,11 @@ const Product = ({ product, CurrencyId }: ProductProps) => {
         className={style.Link}
       >
         <OutOfStock inStock={product.inStock}>
-          <img src={product.gallery[0]} alt={product.name} />
+          <img
+            src={product.gallery[0]}
+            alt={product.name}
+            className={style.img}
+          />
         </OutOfStock>
 
         <p className={style.Name}>{product.name}</p>

@@ -50,10 +50,16 @@ const Category = ({ category }: CategoryPropsType) => {
 
   return (
     <WithUseQueryData response={{ loading, error, data }}>
-      <Grid container spacing={2}>
+      <Grid
+        container
+        spacing={2}
+        display='flex'
+        justifyContent='center'
+        alignItems='center'
+      >
         {data?.category.products.map((product: ProductType) => {
           return (
-            <Grid item xs={12} sm={6} md={4} key={product.id}>
+            <Grid item key={product.id}>
               <Product product={product} CurrencyId={CurrencyId} />
             </Grid>
           );
