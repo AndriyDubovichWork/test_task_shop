@@ -3,15 +3,18 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { CartObjType } from '../../../Pages/Cart/Cart';
 import style from './ImagesGallery.module.scss';
+import OutOfStock from '../../../HOCs/OutOfStock/OutOfStock';
 const ImagesGallery = ({ CartObj }: { CartObj: CartObjType }) => {
   const [ImageIndex, setImageIndex] = useState(0);
   return (
     <div className={style.box}>
-      <img
-        className={style.Image}
-        src={CartObj.gallery[ImageIndex]}
-        alt={CartObj.name}
-      />
+      <OutOfStock inStock={CartObj.inStock}>
+        <img
+          className={style.Image}
+          src={CartObj.gallery[ImageIndex]}
+          alt={CartObj.name}
+        />
+      </OutOfStock>
       <div className={style.Arrows}>
         <ArrowBackIosIcon
           className={style.Arrow}

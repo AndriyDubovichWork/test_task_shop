@@ -9,9 +9,8 @@ type ProductProps = {
 };
 
 const Product = ({ product, CurrencyId }: ProductProps) => {
-  const opacityStyle = !product.inStock ? { opacity: '0.4' } : { opacity: '1' };
   return (
-    <div style={opacityStyle} className={style.Box}>
+    <div className={style.Box}>
       <NavLink
         to={'/test_task_shop/products/?id=' + product.id}
         className={style.Link}

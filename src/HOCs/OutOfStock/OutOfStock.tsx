@@ -6,8 +6,9 @@ type OutOfStockProps = {
 };
 
 const OutOfStock = ({ children, inStock }: OutOfStockProps) => {
+  const opacityStyle = !inStock ? { opacity: '0.4' } : { opacity: '1' };
   return (
-    <div className={style.Box}>
+    <div className={style.Box} style={opacityStyle}>
       {children}
       {!inStock ? <div className={style.OutOfStock}>Out of Stock</div> : ''}
     </div>
